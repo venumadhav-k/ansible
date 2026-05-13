@@ -3,9 +3,9 @@
   connection: local
   become: yes
   tasks:
-  - name: install packages
+  - name: install package
     ansible.builtin.package:
-      name: "{{item}}"
+      name: "{{ item }}"
       state: present
     loop:
      - nginx
