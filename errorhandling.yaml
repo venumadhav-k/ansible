@@ -1,0 +1,12 @@
+- name: error handling
+  hosts: local
+  connection: local
+  tasks:
+  - name: check user exists or not
+    ansible.builtin.command: id vacchu
+    register: user_output
+    ignore_errors: true
+
+  - name: print the user_output
+    ansible.builtin.debug:
+    msg: "{{ user_output}}"  
